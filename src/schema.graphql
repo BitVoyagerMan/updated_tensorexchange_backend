@@ -1,0 +1,36 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""user"""
+type User {
+  id: ID!
+  username: String!
+  email: String!
+  role: String!
+  is_verified: Boolean!
+}
+
+type Query {
+  index: String!
+  securedResource: String!
+  securedResourceForAdmin: String!
+  login(email: String!, password: String!): String!
+  verifyToken: Boolean!
+}
+
+type Mutation {
+  signup(data: UserInput!): User!
+  login(data: LoginInput!): String!
+}
+
+input UserInput {
+  username: String!
+  password: String!
+  email: String!
+}
+
+input LoginInput {
+  username: String!
+  password: String!
+}
