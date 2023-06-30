@@ -30,3 +30,10 @@ export class User {
     @Column()
     is_verified: Boolean;
 }
+@ObjectType({description: "LoginReturn"})
+export class LoginReturn {
+    @Field()
+    token: String;
+    @Field()
+    user: User;
+}

@@ -24,8 +24,8 @@ export class UserService{
             role: user.role,
             is_Verified: user.is_verified
         }
-        const verificationToken:String = jwt.sign(payload, process.env.JWT_KEY, {expiresIn:"3600s"})
-        return verificationToken;
+        const verificationToken:String = jwt.sign(payload, process.env.JWT_KEY, {expiresIn:"3600s"})                            
+        return {token:verificationToken, user:user};
     }
 
     async signUp(data:UserInput){
