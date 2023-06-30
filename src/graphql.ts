@@ -27,6 +27,11 @@ export interface User {
     is_verified: boolean;
 }
 
+export interface LoginReturn {
+    token: string;
+    user: User;
+}
+
 export interface Candle {
     id: string;
     timeframe: string;
@@ -48,7 +53,7 @@ export interface IQuery {
 
 export interface IMutation {
     signup(data: UserInput): User | Promise<User>;
-    login(data: LoginInput): string | Promise<string>;
+    login(data: LoginInput): LoginReturn | Promise<LoginReturn>;
 }
 
 export type DateTime = any;

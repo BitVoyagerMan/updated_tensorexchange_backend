@@ -11,6 +11,12 @@ type User {
   is_verified: Boolean!
 }
 
+"""LoginReturn"""
+type LoginReturn {
+  token: String!
+  user: User!
+}
+
 """candle"""
 type Candle {
   id: ID!
@@ -38,7 +44,7 @@ type Query {
 
 type Mutation {
   signup(data: UserInput!): User!
-  login(data: LoginInput!): String!
+  login(data: LoginInput!): LoginReturn!
 }
 
 input UserInput {

@@ -1,7 +1,7 @@
 import { Args, Context, Mutation, Query, Resolver } from "@nestjs/graphql";
 import { UserService } from "./user.service";
 import { UserInput } from "./dto/user.input";
-import { User } from "./entity/user.entity";
+import { User, LoginReturn } from "./entity/user.entity";
 import { UseGuards } from "@nestjs/common";
 import { JwtGuard } from "src/auth/jwt.guard";
 import { LoginInput } from "./dto/login.input";
@@ -25,7 +25,7 @@ export class UserResolver {
         return true;
     }
     //TODO: Login
-    @Mutation(() => String)
+    @Mutation(() => LoginReturn)
     @UseGuards(AuthGuard)
     async login(@Args('data') data: LoginInput, @Context("user") user:User){
         return this.userService.logIn(data, user);
