@@ -11,12 +11,29 @@ type User {
   is_verified: Boolean!
 }
 
+"""candle"""
+type Candle {
+  id: ID!
+  timeframe: String!
+  time: DateTime!
+  open: String!
+  high: String!
+  low: String!
+  close: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
 type Query {
   index: String!
   securedResource: String!
   securedResourceForAdmin: String!
   login(email: String!, password: String!): String!
   verifyToken: Boolean!
+  allCandles: [Candle!]!
 }
 
 type Mutation {

@@ -27,12 +27,23 @@ export interface User {
     is_verified: boolean;
 }
 
+export interface Candle {
+    id: string;
+    timeframe: string;
+    time: DateTime;
+    open: string;
+    high: string;
+    low: string;
+    close: string;
+}
+
 export interface IQuery {
     index(): string | Promise<string>;
     securedResource(): string | Promise<string>;
     securedResourceForAdmin(): string | Promise<string>;
     login(email: string, password: string): string | Promise<string>;
     verifyToken(): boolean | Promise<boolean>;
+    allCandles(): Candle[] | Promise<Candle[]>;
 }
 
 export interface IMutation {
@@ -40,4 +51,5 @@ export interface IMutation {
     login(data: LoginInput): string | Promise<string>;
 }
 
+export type DateTime = any;
 type Nullable<T> = T | null;
