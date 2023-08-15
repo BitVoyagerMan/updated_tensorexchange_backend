@@ -32,7 +32,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "graphql": "^16.7.1",
-    "jsonwebtoken": "^9.0.0",
+    "jsonwebtoken": "^9.0.1",
     "mysql": "^2.18.1",
     "nodemailer": "^6.9.3",
     "prisma": "^4.16.2",
